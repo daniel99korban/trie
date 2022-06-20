@@ -85,13 +85,12 @@ public class ATV05_TecEmpire {
         } catch(InvalidCharacterException e) {
             System.out.println("\n"+e.getMessage());
         }
-       /* 
         if(v!=null) {
             System.out.println("\nValor associado a chave "+chave+": "+v);
         } else {
             System.out.println("\nNão existe uma chave \""+chave+"\" inserida na estrutura.\n");
         }
-        */
+       
         System.out.println("\nPressione qualquer tecla para voltar.");
         tc.nextLine();
         //tc.close();
