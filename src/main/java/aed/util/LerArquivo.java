@@ -8,7 +8,7 @@ import java.nio.file.*;
 import java.io.*;
 
 public class LerArquivo {
-    public static List<String> readFileInList(String filePath, String fileName) {
+    public static List<String> readFileInList(String filePath, String fileName) throws FileNotFoundException {
 
         List<String> lines = Collections.emptyList();
         try {
@@ -16,12 +16,13 @@ public class LerArquivo {
                     Files.readAllLines(Paths.get(filePath), StandardCharsets.UTF_8);
         }
         catch (IOException e) {
-            System.out.println("Arquivo "+fileName + " não encontrado.");
+            //System.out.println("Arquivo "+fileName + " não encontrado.");
             //e.printStackTrace();
+            throw new FileNotFoundException("Arquivo "+fileName+" não encontrado.");
         }
         return lines;
     }
-    public static String[] ler(String arquivo) {
+    public static String[] ler(String arquivo) throws FileNotFoundException {
         File directory = new File("");
         String caminho = (String) directory.getAbsolutePath();
         caminho += "\\entradadados\\";

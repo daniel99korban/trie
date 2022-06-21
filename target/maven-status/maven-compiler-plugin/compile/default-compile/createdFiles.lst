@@ -1,5 +1,8 @@
 aed\trie\No.class
-aed\trie\InvalidCharacterException.class
 aed\trie\Trie.class
 aed\trie\atv05_tecempire\ATV05_TecEmpire.class
 aed\util\LerArquivo.class
+aed\trie\atv05_tecempire\RunString.class
+aed\trie\atv05_tecempire\RunDouble.class
+aed\trie\atv05_tecempire\RunInteger.class
+aed\trie\InvalidCharacterException.class

@@ -107,7 +107,6 @@ public class Trie<V>{
                     return null;
                 noAux = noAux.filhos[index];
             } else {
-                System.out.println("Entrou..");
                 throw new InvalidCharacterException("Chave informada possui caracteres inválidos.");
             }
         }
@@ -125,7 +124,9 @@ public class Trie<V>{
                 if (noAux.filhos[index] == null)
                     return false;
                 noAux = noAux.filhos[index];
-            } else return false;
+            }  else {
+                throw new InvalidCharacterException("Chave informada possui caracteres inválidos.");
+            }
         }
         return noAux.getValor() != null;
     }
@@ -139,8 +140,11 @@ public class Trie<V>{
             this.decrementaTamanho();
         } else {
             int indice = indiceDe(chave.charAt(i));
-            if(indice != -1)
+            if(indice != -1) {
                 n.filhos[indice] = remover(n.filhos[indice], chave, i+1);
+            }  else {
+                throw new InvalidCharacterException("Chave informada possui caracteres inválidos.");
+            }
         }
         if(n.getValor() != null) return n;
 
@@ -149,11 +153,12 @@ public class Trie<V>{
         }
         return null;
     }
-    public void remover(String chave) {
+    public boolean remover(String chave) { 
+        int qtd = this.getQtd();
         this.setNoRaiz(remover(this.getNoRaiz(), chave, 0));
+        return this.getQtd() < qtd;
     }
-
-
+    
     @Override
     public String toString() {
         String s = "";

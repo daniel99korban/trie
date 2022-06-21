@@ -1,0 +1,10 @@
+zorra;11.9
+xadrez;50.2
+diamante;47.6
+jantar;88.3
+laranja;61.5
+qualidade;27.4
+eliminado;56.1
+oligarquia;12.8
+patrulha;63.13
+retirada;4.44
